@@ -5,7 +5,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 
 /**
- *
+ * Cette classe représente une ressource Jakarta EE 10.
+ * Elle fournit des méthodes pour interagir avec cette ressource.
+ * La ressource est accessible via le chemin "/jakartaee10".
  * @author 
  */
 @Path("jakartaee10")

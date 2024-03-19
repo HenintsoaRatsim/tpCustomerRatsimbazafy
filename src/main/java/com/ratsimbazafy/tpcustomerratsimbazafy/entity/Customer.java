@@ -19,7 +19,8 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
- *
+ * Cette classe représente l'entité Customer, qui stocke les informations des clients.
+ * Elle est annotée avec les informations de mappage pour la persistance en base de données.
  * @author asus
  */
 @Entity

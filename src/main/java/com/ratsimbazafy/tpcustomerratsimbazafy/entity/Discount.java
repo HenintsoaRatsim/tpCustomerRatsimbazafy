@@ -22,7 +22,8 @@ import java.math.BigDecimal;
 import java.util.Collection;
 
 /**
- *
+ * Cette classe représente l'entité Discount, qui stocke les informations des Discount.
+ * Elle est annotée avec les informations de mappage pour la persistance en base de données.
  * @author asus
  */
 @Entity
