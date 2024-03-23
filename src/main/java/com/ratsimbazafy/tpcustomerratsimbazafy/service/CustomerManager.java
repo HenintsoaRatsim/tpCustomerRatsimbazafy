@@ -11,40 +11,50 @@ import com.ratsimbazafy.tpcustomerratsimbazafy.entity.Customer;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+
 /**
  * Façade pour gérer les Customers.
+ *
  * @author asus
  */
 @RequestScoped
 public class CustomerManager {
-    
+
     /**
      * Cette fonction donne la liste des Customers
-     * @return 
+     *
+     * @return
      */
-    public List<Customer> getAllCustomers() {  
+    public List<Customer> getAllCustomers() {
         Query query = em.createNamedQuery("Customer.findAll");
-       return query.getResultList();
-    }  
+        return query.getResultList();
+    }
+
     /**
      * Cette fonction fait l'update d'un customer
+     *
      * @param customer
-     * @return 
+     * @return
      */
     @Transactional
     public Customer update(Customer customer) {
-      return em.merge(customer);
-    } 
-    
+        return em.merge(customer);
+    }
+
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
 
     /**
      * Cette fonction fait l'insertion de customer
-     * @param customer 
+     *
+     * @param customer
      */
     @Transactional
     public void persist(Customer customer) {
-      em.persist(customer);
+        em.persist(customer);
+    }
+
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
     }
 }
